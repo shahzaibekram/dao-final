@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+// import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import './App.css';
 import Header from './Components/Header';
-import Demo from "./Pages/Demo";
-import Proposal from "./Pages/Proposal";
-import NewProposal from "./Pages/NewProposal";
+// import Demo from "./Pages/Demo";
+// import Proposal from "./Pages/Proposal";
+// import NewProposal from "./Pages/NewProposal";
 // import Footer from "./Components/Footer";
 
 const style = {
@@ -11,17 +11,18 @@ const style = {
   text-white select-none flex-col justify-between`
 }
 
+//using tabs instead of using Routers
 function App() {
 
   return (
     <div className={style.wrapper}>
-      <Header />
-      <Routes>
+      <Header /> 
+      {/* <Routes>
         <Route path="/" element={<Demo />} />
         <Route path="/proposal" element={<Proposal />} />
         <Route path="/new-proposal" element={<NewProposal />} />
-        {/* <Route path="/data" element={<Data />} /> */}
-      </Routes>
+        <Route path="/data" element={<Data />} />
+      </Routes> */}
       {/* <Footer /> */}
     </div>
   );
