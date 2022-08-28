@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Metamask Connection</title>
+	
+</head>
+<body>
+
+
+	<h1>Testing Connect Wallet Button</h1>
+	<button className="ethBtn">Connect Now</button>
+	<div className="accountDt"></div>
+
+
+	<br><br><hr>
+	<input type="text" name="recepient">
+	<input type="number" name="value">
+	<button className="ethSend">Send Now</button>
+
+	<script type="text/javascript">
+			
+
+		// txHash is a hex string
+		// As with any RPC call, it may throw an error
+		// const txHash = await ethereum.request({
+		//   method: 'eth_sendTransaction',
+		//   params: [transactionParameters],
+		// });
+		ethereumButton = document.querySelector(".ethBtn")
+		divAccount = document.querySelector(".accountDt")
+		sendBtn = document.querySelector(".ethSend")
+
+
+
+		var connection = false;
+		if(window.ethereum){
+			console.log("SUccess")
+
+			ethereumButton.addEventListener("click",async ()=>{
+				const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+				if(accounts.length > 0){
+					console.log(parseInt(ethereum.chainId))
+					if(parseInt(ethereum.chainId) == 97){
+						connection = true
+						ethereumButton.innerText = 'Connected'
+						divAccount.innerHTML = '<p> Address: '+ accounts[0] + '  </p>'	
+					}else{
+						alert('Please Switch Network to BSC Testnet')
+					}
+					
+				}
+			})
+
+			ethereum.on('accountsChanged', async function (accounts) {
+			  if(connection){
+			  	const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+			  	divAccount.innerHTML = '<p> Address: '+ accounts[0] + '  </p>'
+			  	
+			  }
+			});
+
+			sendBtn.addEventListener('click',async () => {
+				if(connection){
+					console.log('sending......')
+					var rec = document.querySelector('[name="recepient"]').value
+					var val = document.querySelector('[name="value"]').value
+					const transactionParameters = {
+					  to: rec, 
+					  from: ethereum.selectedAddress,
+					  value: val,
+					  chainId: '97'
+					};
+					const txHash = await ethereum.request({
+					  method: 'eth_sendTransaction',
+					  params: [transactionParameters],
+					});
+					console.log(txHash)
+					console.log(transactionParameters)
+					console.log(rec)
+					console.log(val)
+				}else{
+
+					alert('Please Connect First')
+				}
+			})
+
+
+		}else{
+			alert("Install Metamask")
+		}
+
+	</script>
+	
+</body>
+</html>

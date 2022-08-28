@@ -1,0 +1,86 @@
+body {
+    font-family: 'lato', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-color: #2D242F
+  }
+
+  /* .table{
+    border-radius: 100% !important;
+  } */
+
+  /* thead, tbody{
+    border-radius: !important;
+  } */
+
+  .cardTitle{
+    text-align: center;
+    color: black;
+    font-size: 1.5em !important;
+    font-weight: 500 !important;
+  }
+
+  .heading{
+    margin: 30px;
+    font-size: 2em !important;
+  }
+  
+  /* .center {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+    border-color: white !important;
+    color: black !important;
+  }
+
+  .cardportion
+  {
+    background-color: grey;
+    height: 200px;
+    width: 190vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .card1
+  {
+    margin-left: 50px;
+    height: 100%;
+    width: 25%;
+    background-color: white;
+    border-radius: 10px;
+  }
+  .card2
+  {
+    border-radius: 10px;
+    height: 100%;
+    width: 25%;
+    
+    background-color: white;
+  }
+  .card3
+  {
+    border-radius: 10px;
+    margin-right: 50px;
+    height: 100%;
+    width: 25%;
+    background-color: white;
+  }   
+  .recentprop
+  {
+    text-align: center;
+  }
+  .descriptions
+  {
+    border-radius: 10PX;
+    background-color: aliceblue;
+    height: 300px;
+    width: 500px;
+    margin: auto;
+
+  } */
